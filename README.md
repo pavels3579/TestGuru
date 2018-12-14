@@ -22,3 +22,19 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+There are Tests for Students.
+Students do tests and get marks.
+
+Main functions:
+- Cdreate and manage tests
+- Authentiphication
+- Grant access
+- Testing
+- Public tests results at social networks
+
+Entities:
+- Administrators
+- Students
+- Tests
+
