@@ -35,7 +35,7 @@ Main functions:
 
 Entities:
 - Users
+- Tests
 - Questions
-- Marks
+- Answers
 - Results
-
