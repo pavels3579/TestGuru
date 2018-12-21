@@ -1,3 +1,3 @@
 module TestGuru
-  VERSION = '0.1.2'.freeze
+  VERSION = '0.4.4'.freeze
 end

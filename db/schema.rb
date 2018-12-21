@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_170340) do
+ActiveRecord::Schema.define(version: 2018_12_20_203735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_12_19_170340) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -34,6 +35,12 @@ ActiveRecord::Schema.define(version: 2018_12_19_170340) do
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "test", force: :cascade do |t|
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_test_on_category_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -42,6 +49,16 @@ ActiveRecord::Schema.define(version: 2018_12_19_170340) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_tests_on_category_id"
+  end
+
+  create_table "user_tests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_user_tests_on_test_id"
+    t.index ["user_id"], name: "index_user_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,5 +69,8 @@ ActiveRecord::Schema.define(version: 2018_12_19_170340) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "test", "categories"
   add_foreign_key "tests", "categories"
+  add_foreign_key "user_tests", "tests"
+  add_foreign_key "user_tests", "users"
 end
