@@ -13,16 +13,16 @@ categories = Categorie.create!([{ title: 'HTML' },
 
 test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
-                    category_id: categories.find_by(title: 'Ruby').id)
+                    category_id: categories[1].id)
 
-test2 = Test.create!(title: 'Ruby 2',
+Test.create!(title: 'Ruby 2',
                     level: 2,
-                    category_id: categories.find_by(title: 'Ruby').id)
+                    category_id: categories[1].id)
 
 q1 = Question.create!(body: 'How do you create a new hash?',
                     test_id: test1.id)
 
-q1 = Question.create!(body: 'How do you create a new array?',
+Question.create!(body: 'How do you create a new array?',
                     test_id: test1.id)
 
 a1 = Answer.create!(body: 'I have to use {}',
