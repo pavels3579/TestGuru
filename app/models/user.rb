@@ -1,6 +1,10 @@
 class User < ApplicationRecord
+  has_many :user_tests, dependent: :destroy
+  has_many :tests, through: :user_tests
+  has_many :created_tests, class_name: "Test",
+            foreign_key: "author_id", dependent: :nullify
+
   def select_by_level(level)
-    TEST.joins('INNER JOIN user_tests ON tests.id = user_tests.test_id')
-        .where("user_id = ? AND level = ?", id, level)
+    tests.where(level: level)
   end
 end
