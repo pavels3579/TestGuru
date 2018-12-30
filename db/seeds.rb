@@ -29,7 +29,7 @@ Answer.create!(body: 'I have to use {}',
                     correct: true,
                     question_id: questions[0].id)
 
-User.create!(name: 'Mike')
+User.create!(email: 'Mike@yandex.ru')
 
 UserTest.create!(user_id: users[0].id,
                     test_id: tests[0].id)
