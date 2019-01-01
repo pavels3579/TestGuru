@@ -3,13 +3,13 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :user_tests, dependent: :destroy
   has_many :users, through: :user_tests
-  belongs_to :author, class_name: "Users"
+  belongs_to :author, class_name: "User"
 
   scope :easy, -> { where(level:0..1) }
   scope :middle, -> { where(level:2..4) }
   scope :hard, -> { where(level:5..Float::INFINITY) }
 
-  scope :select_by_level, -> (level) { where (level: level) }
+  scope :select_by_level, -> (level) { where(level: level) }
 
   scope :select_by_category, -> (category_title) {
                      joins(:category)
