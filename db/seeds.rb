@@ -7,30 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Categorie.create!([{ title: 'HTML' },
-                              { title: 'Ruby' },
-                              { title: 'php' }])
+categories = Category.create!(
+                               [
+                                 { title: 'HTML' },
+                                 { title: 'Ruby' },
+                                 { title: 'php' }
+                               ]
+                              )
 
-Test.create!(title: 'Ruby 1',
+user = User.create!(email: 'Mike@yandex.ru')
+
+test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
-                    category_id: categories[1].id)
+                    category_id: categories[1].id,
+                    author_id: user.id)
 
 Test.create!(title: 'Ruby 2',
                     level: 2,
-                    category_id: categories[1].id)
+                    category_id: categories[1].id,
+                    author_id: user.id)
 
-Question.create!(body: 'How do you create a new hash?',
-                    test_id: tests[0].id)
+question1 = Question.create!(body: 'How do you create a new hash?',
+                             test_id: test1.id)
 
 Question.create!(body: 'How do you create a new array?',
-                    test_id: tests[0].id)
+                 test_id: test1.id)
 
 Answer.create!(body: 'I have to use {}',
-                    correct: true,
-                    question_id: questions[0].id)
+               correct: true,
+               question_id: question1.id)
 
-User.create!(name: 'Mike')
-
-UserTest.create!(user_id: users[0].id,
-                    test_id: tests[0].id)
+UserTest.create!(user_id: user.id,
+                 test_id: test1.id)
 
