@@ -1,25 +1,44 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test
+  before_action :find_test, only: %i[index create new]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_quuestion_not_found
 
-  def new
+  def new; end
 
-  end
-
-  def create
-
+  def index
+    render inline: '<p>Questions:<br><%= @test.questions.pluck(:body) %></p>'
   end
 
   def show
-    render plain: 'Show questions'
+    find_question
+    render inline: '<p>Question:<br><%= @question.body %></p>'
+  end
+
+  def create
+    buebag
+    question = Question.create(question_params)
+    render plain question.inspect
+  end
+
+  def destroy
+    find_question
+    Question.delete(@question) if @question
+    render inline: '<p>Question <%= @question.id %> was deleted</p>'
   end
 
   private
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.reqiure[:question].permit(:body,:test_id)
   end
 
   def rescue_with_quuestion_not_found
