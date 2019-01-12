@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.create(question_params)
-    render plain question.inspect
+    render plain: "Question was created: " + question.inspect
   end
 
   def destroy
@@ -37,7 +37,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require[:question].permit(:body, :test_id)
+    params.require(:question).permit(:body, :test_id)
   end
 
   def rescue_with_quuestion_not_found
