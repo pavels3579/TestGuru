@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    find_question
+    @question = Question.find(params[:id])
     render inline: '<p>Question:<br><%= @question.body %></p>'
   end
 
@@ -21,8 +21,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    find_question
-    Question.delete(@question) if @question
+    @question = Question.find(params[:id])
+    @question.destroy
     render inline: '<p>Question <%= @question.id %> was deleted</p>'
   end
 
@@ -30,10 +30,6 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
-  end
-
-  def find_question
-    @question = Question.find(params[:id])
   end
 
   def question_params
