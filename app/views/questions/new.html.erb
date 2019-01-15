@@ -1,4 +1,4 @@
-<h1>Create New Question</h1>
+<!--<h1>Create New Question</h1>
 
 <form action="/tests/1/questions" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type = "hidden">
@@ -12,3 +12,8 @@
 
   <input type="submit" value="Create">
 </form>
+-->
+<h1> question_header(question, 'Create New')</h1>
+
+<%= render 'form' %>
+<%= link_to 'Back', questions_path %>

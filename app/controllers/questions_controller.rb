@@ -4,26 +4,47 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_quuestion_not_found
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def index
-    render inline: '<p>Questions:<br><%= @test.questions.pluck(:body) %></p>'
+    @questions = Question.all
   end
 
   def show
     @question = Question.find(params[:id])
-    render inline: '<p>Question:<br><%= @question.body %></p>'
+  end
+
+  def edit
+    @question = Question.find(params[:id])
   end
 
   def create
-    question = Question.create(question_params)
-    render plain: "Question was created: " + question.inspect
+    @question = Question.new(question_params)
+
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
+  end
+
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    render inline: '<p>Question <%= @question.id %> was deleted</p>'
+
+    redirect_to questions_path
   end
 
   private
