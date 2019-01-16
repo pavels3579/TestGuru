@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_action :find_test, only: %i[index create new]
+  before_action :find_question, only: %i[show edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_quuestion_not_found
 
@@ -8,17 +9,11 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def index
-    @questions = Question.all
-  end
+  def index; end
 
-  def show
-    @question = Question.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @question = Question.find(params[:id])
-  end
+  def edit; end
 
   def create
     @question = Question.new(question_params)
@@ -31,8 +26,6 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-
     if @question.update(question_params)
       redirect_to @question
     else
@@ -41,10 +34,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
 
-    redirect_to questions_path
+    redirect_to test_path
   end
 
   private
@@ -53,8 +45,12 @@ class QuestionsController < ApplicationController
     @test = Test.find(params[:test_id])
   end
 
+  def find_question
+    @question = Question.find(params[:id])
+  end
+
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_quuestion_not_found
