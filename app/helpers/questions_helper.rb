@@ -1,10 +1,9 @@
 module QuestionsHelper
-  def question_header(question)
-    test = question.test
+  def question_header(test, question)
     if question.new_record?
-      'Create New '+test.title+' Question'
+      "Create New #{test.title} Question"
     else
-      'Edit '+test.title+' Question'
+      "Edit #{question.test.title} Question"
     end
   end
 end
