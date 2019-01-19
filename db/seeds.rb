@@ -30,13 +30,29 @@ Test.create!(title: 'Ruby 2',
 question1 = Question.create!(body: 'How do you create a new hash?',
                              test_id: test1.id)
 
-Question.create!(body: 'How do you create a new array?',
+question2 = Question.create!(body: 'How do you create a new array?',
                  test_id: test1.id)
 
 Answer.create!(body: 'I have to use {}',
                correct: true,
                question_id: question1.id)
 
-UserTest.create!(user_id: user.id,
-                 test_id: test1.id)
+Answer.create!(body: 'I have to use :',
+               correct: false,
+               question_id: question1.id)
+
+Answer.create!(body: 'I have to use {}',
+               correct: false,
+               question_id: question2.id)
+
+Answer.create!(body: 'I have to use []',
+               correct: true,
+               question_id: question2.id)
+
+Answer.create!(body: 'I have to use .new',
+               correct: false,
+               question_id: question2.id)
+
+
+
 
