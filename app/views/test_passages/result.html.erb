@@ -3,11 +3,11 @@
 <div>
   You answered percent correct:
 
-  <% if test_results(@test_passage.correct_questions, @test_passage.test.questions.count)[:success] %>
-  <span style="color: green" > <%= test_results(@test_passage.correct_questions, @test_passage.test.questions.count)[:percent] %></span>
+  <% if @test_passage.success? %>
+  <span style="color: green" > <%= @test_passage.percent_correct %></span>
   You passed the test!
   <% else %>
-  <span style="color: red" > <%= test_results(@test_passage.correct_questions, @test_passage.test.questions.count)[:percent] %></span>
+  <span style="color: red" > <%= @test_passage.percent_correct %></span>
   You didn't pass the test!
   <% end %>
 </div>
