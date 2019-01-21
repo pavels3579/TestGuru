@@ -1,0 +1,16 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<div>
+  You answered percent correct:
+
+  <% if @test_passage.success? %>
+  <span class="test_passages success" > <%= @test_passage.percent_correct.to_i %></span>
+  You passed the test!
+  <% else %>
+  <span class="test_passages fail" > <%= @test_passage.percent_correct.to_i %></span>
+  You didn't pass the test!
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'All tests', tests_path %>
