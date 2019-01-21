@@ -4,10 +4,10 @@
   You answered percent correct:
 
   <% if @test_passage.success? %>
-  <span style="color: green" > <%= @test_passage.percent_correct %></span>
+  <span class="test_passages success" > <%= @test_passage.percent_correct.to_i %></span>
   You passed the test!
   <% else %>
-  <span style="color: red" > <%= @test_passage.percent_correct %></span>
+  <span class="test_passages fail" > <%= @test_passage.percent_correct.to_i %></span>
   You didn't pass the test!
   <% end %>
 </div>
