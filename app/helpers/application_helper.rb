@@ -7,7 +7,8 @@ module ApplicationHelper
     author+repo
   end
 
-  def flash_mes(message)
-    flash.now[:alert] = message
+  def flash_mes(class_name)
+    content_tag :p, flash[:alert], class: "#{class_name}"
   end
+
 end

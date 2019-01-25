@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      session[:user_path] = request.path
       redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please'
     end
 
@@ -21,10 +22,6 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
-  end
-
-  def exit_user
-    session.destroy
   end
 
 end

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, uniqueness: true,
-                    format: { with: /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/, message: "it is not correct email" }
+                    format: { with: /@/, message: "it is not correct email" }
 
   def select_by_level(level)
     tests.select_by_level(level)
