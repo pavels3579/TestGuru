@@ -7,8 +7,8 @@ module ApplicationHelper
     author+repo
   end
 
-  def flash_mes(class_name)
-    content_tag :p, flash[:alert], class: "#{class_name}"
+  def flash_mes(type)
+    content_tag :p, flash[type], class: "flash #{type}" if type.present?
   end
 
 end
