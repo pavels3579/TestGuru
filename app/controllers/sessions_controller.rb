@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to session[:user_path] || test_path
+      redirect_to session.delete("user_path") || test_path
 
     else
       flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
@@ -14,12 +14,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  def delete(param)
-    session[param] = nil
-  end
+  def delete; end
 
   def destroy
-    delete(:user_id)
+    session.delete("user_id")
     redirect_to tests_path
   end
 
