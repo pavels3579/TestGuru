@@ -4,7 +4,10 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: "Test",
             foreign_key: "author_id"
 
-  validates :email, presence: true
+  has_secure_password
+
+  validates :email, uniqueness: true,
+                    format: { with: /@/, message: "it is not correct email" }
 
   def select_by_level(level)
     tests.select_by_level(level)
