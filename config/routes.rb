@@ -23,4 +23,8 @@ Rails.application.routes.draw do
     end
   end
 
+  scope ":locale", locale: /ru|nl/ do
+    resources :admin, :tests
+  end
+
 end

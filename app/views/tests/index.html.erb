@@ -1,11 +1,11 @@
-<h1>Tricky tests</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Questions</th>
-    <th>Actions</th>
+    <th><%= t('tests_params.title') %></th>
+    <th><%= t('tests_params.level') %></th>
+    <th><%= t('tests_params.questions') %></th>
+    <th><%= t('tests_params.actions') %></th>
   </tr>
 
   <%= render @tests %>
