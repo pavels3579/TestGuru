@@ -19,22 +19,47 @@ en:
   tests:
     index:
       header: "Tricky tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
 
   test_passages:
     result:
-      header: "The %{title} Test was Completed!"
+      header: "Test %{title} was successfully completed!"
+      you_answered_percent_correct: "You answerred percents correct"
+      you_passed_the_test: "You passed the test!"
+      you_didnot_pass_the_test: "You didn't pass the test!"
+    show:
+      passing_the_test: "Peassing the test %{title}"
+      question_number_of_questions_counts: "%{question_number} of %{questions_counts}"
 
   admin:
     tests:
-      create:
-        success: "Test was successfully created."
       index:
         header: "Tricky tests"
+        new_test: "New test"
         title: "Title"
         level: "Level"
         questions: "Questions"
         actions: "Actions"
-        new_test: "New test"
+      show:
+        new_question: "New question"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+      new:
+        header: "Creating new test"
+      create:
+        success: "Test was successfully created."
+      edit:
+        header: "Editing the test %{title}"
+      update:
+        success: "Test was successfully updated."
+      delete:
+        success: "Test was successfully deleted."
 
   tests_mailer:
     completed_test:
@@ -45,4 +70,24 @@ en:
     edit: "Edit"
     delete: "Delete"
     back: "Back"
+    next: "Next"
     are_you_sure?: "Are you sure?"
+    all_tests: "All tests"
+
+  layouts:
+    header:
+      login: "Login"
+      signup: "Sign up"
+      logout: "Logout"
+      test_guru: "Test Guru"
+      welcome: "Welcome"
+      guru: "Guru"
+    nav:
+      logout: "Logout"
+      title: "Test Guru Admin panel"
+      welcome: "Welcome"
+      guru: "Guru"
+    footer:
+      author: "Semenkin Paul"
+      about_author: "Ruby on rails programmer"
+      about_project: "Education project at online school"

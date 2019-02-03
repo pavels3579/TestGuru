@@ -4,6 +4,9 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+        delete: "Удалить тест"
+    select:
+      prompt: "Пожалуйста выберите"
     label:
       test:
         title: "Название"
@@ -21,20 +24,47 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
-    _test:
+      title: "Заголовок"
+      level: "Уровень"
+      questions: "Вопросов"
+      actions: "Действия"
+    test:
       start: "Начать"
 
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      you_answered_percent_correct: "Количество процентов правильных ответов"
+      you_passed_the_test: "Вы прошли тест!"
+      you_didnot_pass_the_test: "Вы не прошли тест!"
+    show:
+      passing_the_test: "Прохождение %{title} теста"
+      question_number_of_questions_counts: "%{question_number} из %{questions_counts}"
 
   admin:
     tests:
-      create:
-        success: "Тест успешно создан."
       index:
         header: "Доступные тесты"
         new_test: "Новый тест"
+        title: "Заголовок"
+        level: "Уровень"
+        questions: "Вопросов"
+        actions: "Действия"
+      show:
+        new_question: "Новый вопрос"
+        title: "Заголовок"
+        level: "Уровень"
+        questions: "Вопросы"
+      new:
+        header: "Создание нового теста"
+      create:
+        success: "Тест успешно создан."
+      edit:
+        header: "Редактирование %{title} тест"
+      update:
+        success: "Тест успешно обновлен."
+      delete:
+        success: "Тест успешно удален."
 
   tests_mailer:
     completed_test:
@@ -45,7 +75,9 @@ ru:
     edit: "Изменить"
     delete: "Удалить"
     back: "Назад"
+    next: "Следующий"
     are_you_sure?: "Вы уверены?"
+    all_tests: "Все тесты"
 
   tests_params:
     title: "Заголовок"
@@ -54,6 +86,20 @@ ru:
     actions: "Действия"
 
   layouts:
-    _header:
+    header:
+      login: "Войти"
+      signup: "Зарегистрироваться"
       logout: "Выйти"
+      test_guru: "Тест Гуру"
+      welcome: "Добро пожаловать"
+      guru: "Гуру"
+    nav:
+      logout: "Выйти"
+      title: "Тест Гуру админ панель"
+      welcome: "Добро пожаловать"
+      guru: "Гуру"
+    footer:
+      author: "Семенкин Павел"
+      about_author: "программист Ruby on rails"
+      about_project: "Учебный проект в онлайн-школе"
 

@@ -3,10 +3,10 @@ ru:
     models:
       test: "Тест"
 
-  attributes:
-    test:
-      title: "Название"
+    attributes:
+      test:
+        title: "Название"
 
-  errors:
-    messages:
-      blank: "не может быть пустым"
+    errors:
+      messages:
+        blank: "не может быть пустым"
