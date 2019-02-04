@@ -1,16 +1,16 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <div>
-  You answered percent correct:
+  <%= t('.you_answered_percent_correct') %>:
 
   <% if @test_passage.success? %>
   <span class="test_passages success" > <%= @test_passage.percent_correct.to_i %></span>
-  You passed the test!
+  <%= t('.you_passed_the_test') %>
   <% else %>
   <span class="test_passages fail" > <%= @test_passage.percent_correct.to_i %></span>
-  You didn't pass the test!
+  <%= t('.you_didnot_pass_the_test') %>
   <% end %>
 </div>
 <br>
 
-<%= link_to 'All tests', tests_path %>
+<%= link_to t('shared.all_tests'), tests_path %>
