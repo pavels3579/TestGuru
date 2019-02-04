@@ -6,6 +6,8 @@ ru:
     attributes:
       test:
         title: "Название"
+      user:
+        password: "Пароль"
 
     errors:
       messages:

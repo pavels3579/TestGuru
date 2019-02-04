@@ -79,12 +79,6 @@ ru:
     are_you_sure?: "Вы уверены?"
     all_tests: "Все тесты"
 
-  tests_params:
-    title: "Заголовок"
-    level: "Уровень"
-    questions: "Вопросов"
-    actions: "Действия"
-
   layouts:
     header:
       login: "Войти"
