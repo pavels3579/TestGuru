@@ -80,14 +80,7 @@ ru:
     all_tests: "Все тесты"
 
   layouts:
-    header:
-      login: "Войти"
-      signup: "Зарегистрироваться"
-      logout: "Выйти"
-      test_guru: "Тест Гуру"
-      welcome: "Добро пожаловать"
-      guru: "Гуру"
-    nav:
+    nav_admin:
       logout: "Выйти"
       title: "Aдмин панель"
       welcome: "Добро пожаловать"
