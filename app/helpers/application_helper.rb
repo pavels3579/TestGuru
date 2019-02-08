@@ -8,19 +8,11 @@ module ApplicationHelper
   end
 
   def flash_mes(type)
-    if type.to_s == 'notice'
-      'alert alert-info'
-    elsif type.to_s == 'primary'
-      'alert alert-primary'
-    elsif type.to_s == 'warning'
-      'alert alert-warning'
-    elsif type.to_s == 'danger'
-      'alert alert-danger'
-    elsif type.to_s == 'success'
-      'alert alert-success'
-    else
-      'alert alert-info'
-    end
+    {
+      notice: "alert-info",
+      alert: "warning"
+    }[type.to_sym]
+
   end
 
 end
