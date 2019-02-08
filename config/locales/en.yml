@@ -75,16 +75,9 @@ en:
     all_tests: "All tests"
 
   layouts:
-    header:
-      login: "Login"
-      signup: "Sign up"
+    nav_admin:
       logout: "Logout"
-      test_guru: "Test Guru"
-      welcome: "Welcome"
-      guru: "Guru"
-    nav:
-      logout: "Logout"
-      title: "Test Guru Admin panel"
+      title: "Admin panel"
       welcome: "Welcome"
       guru: "Guru"
     footer:
