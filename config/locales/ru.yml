@@ -69,6 +69,13 @@ ru:
       delete:
         success: "Тест успешно удален."
 
+    gists:
+      index:
+        header: "Список гистов"
+        question: "Вопрос"
+        url: "Адрес"
+        email: "Почта"
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"

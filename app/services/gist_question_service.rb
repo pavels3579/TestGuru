@@ -9,11 +9,7 @@ class GistQuestionService
 
   def call
     response = @client.create_gist(gist_params)
-    if response.html_url.present?
-      { success: response.html_url }
-    else
-      { success: false }
-    end
+    ResultObject.new(response)
   end
 
   private
@@ -30,7 +26,23 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body, *@question.answers.pluck(:body)].join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
+  end
+
+end
+
+class ResultObject
+
+  def initialize(response = nil)
+    @response = response
+  end
+
+  def success?
+    html_url.present?
+  end
+
+  def html_url
+    @response&.html_url
   end
 
 end
