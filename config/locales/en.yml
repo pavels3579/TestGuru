@@ -36,7 +36,7 @@ en:
       passing_the_test: "Peassing the test %{title}"
       question_number_of_questions_counts: "%{question_number} of %{questions_counts}"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! Link is %{link}"
       failure: "An error occured while saving gist"
 
   admin:

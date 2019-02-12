@@ -29,20 +29,22 @@ class GistQuestionService
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 
+  class ResultObject
+
+    def initialize(response = nil)
+      @response = response
+    end
+
+    def success?
+      html_url.present?
+    end
+
+    def html_url
+      @response&.html_url
+    end
+
+  end
+
 end
 
-class ResultObject
 
-  def initialize(response = nil)
-    @response = response
-  end
-
-  def success?
-    html_url.present?
-  end
-
-  def html_url
-    @response&.html_url
-  end
-
-end

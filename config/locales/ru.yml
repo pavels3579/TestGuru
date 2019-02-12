@@ -41,7 +41,7 @@ ru:
       passing_the_test: "Прохождение %{title} теста"
       question_number_of_questions_counts: "%{question_number} из %{questions_counts}"
     gist:
-      success: "Gist успешно сохранен!"
+      success: "Gist успешно сохранен! Ссылка %{link}"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
