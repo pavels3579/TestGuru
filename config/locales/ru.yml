@@ -40,6 +40,9 @@ ru:
     show:
       passing_the_test: "Прохождение %{title} теста"
       question_number_of_questions_counts: "%{question_number} из %{questions_counts}"
+    gist:
+      success: "Gist успешно сохранен! Ссылка %{link}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:
@@ -66,6 +69,13 @@ ru:
       delete:
         success: "Тест успешно удален."
 
+    gists:
+      index:
+        header: "Список гистов"
+        question: "Вопрос"
+        url: "Адрес"
+        email: "Почта"
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
@@ -85,8 +95,12 @@ ru:
       title: "Aдмин панель"
       welcome: "Добро пожаловать"
       guru: "Гуру"
+      gists: "Показать Гисты"
     footer:
       author: "Семенкин Павел"
       about_author: "программист Ruby on rails"
       about_project: "Учебный проект в онлайн-школе"
 
+  services:
+    gist_question_service:
+      description: "Вопрост теста %{title} из ТестГуру"
