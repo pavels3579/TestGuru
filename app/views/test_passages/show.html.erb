@@ -29,6 +29,11 @@
 
       </div>
     </div>
+
+    <div class="my-progress">
+      <%= content_tag :div, @test_passage.test.title, class: 'my-bar', data: { bar_width: (@test_passage.current_question_number/@test_passage.questions_count*100) } %>
+    </div>
+
   </div>
 </div>
 

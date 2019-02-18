@@ -63,6 +63,8 @@ en:
         success: "Test was successfully updated."
       delete:
         success: "Test was successfully deleted."
+      form_inline:
+        submit: "OK"
 
     gists:
       index:
