@@ -19,7 +19,6 @@ function formInlineLinkHandler(event) {
   event.preventDefault();
 
   var testId = this.dataset.testId;
-  console.log(testId);
   formInlineHandler(testId);
 }
 
