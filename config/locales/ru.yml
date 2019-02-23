@@ -68,6 +68,8 @@ ru:
         success: "Тест успешно обновлен."
       delete:
         success: "Тест успешно удален."
+      form_inline:
+        submit: "OK"
 
     gists:
       index:

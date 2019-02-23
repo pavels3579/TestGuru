@@ -15,7 +15,15 @@ categories = Category.create!(
                                ]
                               )
 
-user = User.create!(email: 'Mike@yandex.ru')
+user = User.create!(email: 'Mike@yandex.ru',
+                    password: '123456',
+                    confirmed_at: Time.now)
+
+admin = Admin.create!(email: 'qwe@ya.ru',
+                      password: '123456',
+                      first_name: 'Paul',
+                      last_name: 'Semenkin',
+                      confirmed_at: Time.now)
 
 test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
@@ -32,6 +40,10 @@ question1 = Question.create!(body: 'How do you create a new hash?',
 
 question2 = Question.create!(body: 'How do you create a new array?',
                  test_id: test1.id)
+
+question3 = Question.create!(body: 'How do you add to array?',
+                 test_id: test1.id)
+
 
 Answer.create!(body: 'I have to use {}',
                correct: true,
@@ -52,6 +64,14 @@ Answer.create!(body: 'I have to use []',
 Answer.create!(body: 'I have to use .new',
                correct: false,
                question_id: question2.id)
+
+Answer.create!(body: 'I have to use push',
+               correct: true,
+               question_id: question3.id)
+
+Answer.create!(body: 'I have to use add',
+               correct: false,
+               question_id: question3.id)
 
 
 
