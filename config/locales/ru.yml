@@ -98,6 +98,7 @@ ru:
       welcome: "Добро пожаловать"
       guru: "Гуру"
       gists: "Показать Гисты"
+      feedback: "Обратная связь"
     footer:
       author: "Семенкин Павел"
       about_author: "программист Ruby on rails"
