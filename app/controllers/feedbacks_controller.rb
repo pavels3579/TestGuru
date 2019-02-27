@@ -1,4 +1,4 @@
-class FeedBacksController < ApplicationController
+class FeedbacksController < ApplicationController
   respond_to :html
 
   def new
