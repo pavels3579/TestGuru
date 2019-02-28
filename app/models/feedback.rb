@@ -1,11 +1,7 @@
 class Feedback
   include ActiveModel::Model
 
-  attr_accessor(
-    :title,
-    :body,
-    :user
-  )
+  attr_accessor :title, :body, :user
 
   validates :title, :body, :user, presence: true
 
