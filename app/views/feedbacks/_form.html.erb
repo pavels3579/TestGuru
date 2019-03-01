@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
+      <%= render 'shared/errors', resource: @feeedback %>
+
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :feedback_title %>
+      </p>
+
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_field :body, id: :feedback_body %>
+      </p>
+
+      <p><%= form.submit %></p>
+
+    <% end %>
+
+  </div>
+</div>

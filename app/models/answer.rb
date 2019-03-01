@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :body, presence: true
-  validate :validate_answers_count, on: :create
+  validates :validate_answers_count, on: :create
 
   private
 
