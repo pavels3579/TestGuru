@@ -39,6 +39,19 @@ en:
       success: "Gist was successfully created! Link is %{link}"
       failure: "An error occured while saving gist"
 
+  badges:
+      index:
+        header: "Badges"
+        title: "Title"
+        picture: "Picture"
+
+  user_badges:
+      index:
+        header: "My badges"
+        title: "Title"
+        picture: "Picture"
+
+
   admin:
     tests:
       index:
@@ -73,6 +86,37 @@ en:
         url: "Link"
         email: "Email"
 
+    badges:
+      index:
+        header: "Badges"
+        new_babge: "New badge"
+        title: "Title"
+        url: "Link"
+        picture: "Picture"
+        rule_name: "Rule name"
+        rule_value: "Value of rule"
+        actions: "Actions"
+      show:
+        title: "Title"
+        url: "Link"
+        rule_name: "Rule name"
+        rule_value: "Value of rule"
+      new:
+        header: "Creating the new badge"
+      create:
+        success: "Badge was successfully created."
+      edit:
+        header: "Editing badge %{title}"
+      form:
+        title: "Title"
+        url: "Link"
+        rule_name: "Rule name"
+        rule_value: "Value of rule"
+      update:
+        success: "Badge was successfully updated."
+      delete:
+        success: "Badge was successfully deleted."
+
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
@@ -92,7 +136,8 @@ en:
       title: "Admin panel"
       welcome: "Welcome"
       guru: "Guru"
-      gists: "Show gists"
+      gists: "Gists"
+      badges: "Badges"
       feedback: "Feedback"
     footer:
       author: "Semenkin Paul"

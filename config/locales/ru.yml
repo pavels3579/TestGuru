@@ -44,6 +44,19 @@ ru:
       success: "Gist успешно сохранен! Ссылка %{link}"
       failure: "Во время сохранения gist произошла ошибка"
 
+  badges:
+      index:
+        header: "Бэйджи"
+        title: "Заголовок"
+        picture: "Картинка"
+
+  user_badges:
+      index:
+        header: "Мои бэйджи"
+        title: "Заголовок"
+        picture: "Картинка"
+
+
   admin:
     tests:
       index:
@@ -78,6 +91,37 @@ ru:
         url: "Адрес"
         email: "Почта"
 
+    badges:
+      index:
+        header: "Бэйджи"
+        new_babge: "Новый бэйдж"
+        title: "Заголовок"
+        url: "Ссылка"
+        picture: "Картинка"
+        rule_name: "Название правила"
+        rule_value: "Значение правила"
+        actions: "Действия"
+      show:
+        title: "Заголовок"
+        url: "Ссылка"
+        rule_name: "Название правила"
+        rule_value: "Значение правила"
+      new:
+        header: "Создание нового бэйджа"
+      create:
+        success: "Бэйдж успешно создан."
+      edit:
+        header: "Редактирование бэйджа %{title}"
+      form:
+        title: "Заголовок"
+        url: "Ссылка"
+        rule_name: "Название правила"
+        rule_value: "Значение правила"
+      update:
+        success: "Бэйдж успешно обновлен."
+      delete:
+        success: "Бэйдж успешно удален."
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
@@ -97,7 +141,8 @@ ru:
       title: "Aдмин панель"
       welcome: "Добро пожаловать"
       guru: "Гуру"
-      gists: "Показать Гисты"
+      gists: "Гисты"
+      badges: "Бэйджи"
       feedback: "Обратная связь"
     footer:
       author: "Семенкин Павел"
