@@ -1,3 +1,3 @@
 class Badge < ApplicationRecord
-  validates :title, :url, :rule_name, :rule_value, presence: true
+  validates :title, :url, :rule_name, presence: true
 end

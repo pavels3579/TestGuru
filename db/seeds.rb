@@ -9,13 +9,13 @@
 
 categories = Category.create!(
                                [
-                                 { title: 'HTML' },
-                                 { title: 'Ruby' },
-                                 { title: 'php' }
+                                 { title: 'Frontend' },
+                                 { title: 'Backend' },
+                                 { title: 'net' }
                                ]
                               )
 
-user = User.create!(email: 'Mike@yandex.ru',
+user = User.create!(email: 'm@ya.ru',
                     password: '123456',
                     confirmed_at: Time.now)
 
@@ -30,9 +30,9 @@ test1 = Test.create!(title: 'Ruby 1',
                     category_id: categories[1].id,
                     author_id: user.id)
 
-Test.create!(title: 'Ruby 2',
+Test.create!(title: 'HTML',
                     level: 2,
-                    category_id: categories[1].id,
+                    category_id: categories[0].id,
                     author_id: user.id)
 
 question1 = Question.create!(body: 'How do you create a new hash?',
@@ -73,6 +73,14 @@ Answer.create!(body: 'I have to use add',
                correct: false,
                question_id: question3.id)
 
+Badge.create!(title: 'For first successfull try',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579490.png',
+              rule_name: 'success_first_try',
+              rule_value: '')
 
+Badge.create!(title: 'For first level tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579491.png',
+              rule_name: 'level',
+              rule_value: '1')
 
 

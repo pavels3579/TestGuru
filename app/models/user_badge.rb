@@ -2,6 +2,8 @@ class UserBadge < ApplicationRecord
   belongs_to :user
   belongs_to :badge
 
+  validates :user, :badge, presence: true
+
   def try_get_badge
     badges = Badge.all
 
