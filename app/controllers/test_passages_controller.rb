@@ -27,7 +27,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
-      UserBadge.try_get_badge
+      BadgeService.new(current_user).try_get_badge
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
