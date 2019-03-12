@@ -4,4 +4,6 @@ class Badge < ApplicationRecord
 
   validates :title, :url, :rule_name, presence: true
   validates :rule_name, uniqueness: true
+
+  enum rule_names: %w[category level success_first_try]
 end

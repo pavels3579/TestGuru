@@ -83,4 +83,9 @@ Badge.create!(title: 'For first level tests',
               rule_name: 'level',
               rule_value: '1')
 
+Badge.create!(title: 'For successfull backend tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579492.png',
+              rule_name: 'category',
+              rule_value: 'backend')
+
 
