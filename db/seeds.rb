@@ -41,8 +41,8 @@ question1 = Question.create!(body: 'How do you create a new hash?',
 question2 = Question.create!(body: 'How do you create a new array?',
                  test_id: test1.id)
 
-question3 = Question.create!(body: 'How do you add to array?',
-                 test_id: test1.id)
+#question3 = Question.create!(body: 'How do you add to array?',
+#                 test_id: test1.id)
 
 
 Answer.create!(body: 'I have to use {}',
@@ -65,13 +65,13 @@ Answer.create!(body: 'I have to use .new',
                correct: false,
                question_id: question2.id)
 
-Answer.create!(body: 'I have to use push',
-               correct: true,
-               question_id: question3.id)
+#Answer.create!(body: 'I have to use push',
+#               correct: true,
+#               question_id: question3.id)
 
-Answer.create!(body: 'I have to use add',
-               correct: false,
-               question_id: question3.id)
+#Answer.create!(body: 'I have to use add',
+#               correct: false,
+#               question_id: question3.id)
 
 Badge.create!(title: 'For first successfull try',
               url: 'https://image.flaticon.com/icons/png/128/1579/1579490.png',
@@ -86,6 +86,6 @@ Badge.create!(title: 'For first level tests',
 Badge.create!(title: 'For successfull backend tests',
               url: 'https://image.flaticon.com/icons/png/128/1579/1579492.png',
               rule_name: 'category',
-              rule_value: 'backend')
+              rule_value: 'Backend')
 
 
