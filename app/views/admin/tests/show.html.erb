@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <strong><%= t('.timer') %>:</strong>
+  <%= @test.timer %>
+</p>
+
+<p>
   <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 </p>
 

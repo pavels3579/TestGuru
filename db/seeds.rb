@@ -28,12 +28,14 @@ admin = Admin.create!(email: 'qwe@ya.ru',
 test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
                     category_id: categories[1].id,
-                    author_id: user.id)
+                    author_id: user.id,
+                    timer: 2)
 
-Test.create!(title: 'HTML',
+test2 = Test.create!(title: 'HTML',
                     level: 2,
                     category_id: categories[0].id,
-                    author_id: user.id)
+                    author_id: user.id,
+                    timer: 0)
 
 question1 = Question.create!(body: 'How do you create a new hash?',
                              test_id: test1.id)
@@ -44,6 +46,8 @@ question2 = Question.create!(body: 'How do you create a new array?',
 #question3 = Question.create!(body: 'How do you add to array?',
 #                 test_id: test1.id)
 
+question21 = Question.create!(body: 'What tag you need to use for link?',
+                             test_id: test2.id)
 
 Answer.create!(body: 'I have to use {}',
                correct: true,
@@ -72,6 +76,10 @@ Answer.create!(body: 'I have to use .new',
 #Answer.create!(body: 'I have to use add',
 #               correct: false,
 #               question_id: question3.id)
+
+Answer.create!(body: 'I need to use <a>',
+               correct: true,
+               question_id: question21.id)
 
 Badge.create!(title: 'For first successfull try',
               url: 'https://image.flaticon.com/icons/png/128/1579/1579490.png',

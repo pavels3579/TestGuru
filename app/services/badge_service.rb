@@ -13,16 +13,19 @@ class BadgeService
   end
 
   def category(rule_value)
-    return false unless @test.category.title = rule_value
+    return false unless @test.category.title == rule_value
 
-    user_successfull_tests.where(category_id: @test.category_id).uniq.count == Test.select_by_category(@test.category.title).count
+    user_successfull_tests.where(category_id: @test.category_id).uniq.count ==
+      Test.select_by_category(@test.category.title).count
   end
 
   def level(rule_value)
-    user_successfull_tests.where(level: @test.level).uniq.count == Test.select_by_level(rule_value.to_i).count
+    return false unless @test.level == rule_value.to_i
+    user_successfull_tests.where(level: @test.level).uniq.count ==
+      Test.select_by_level(rule_value.to_i).count
   end
 
-  def success_first_try(rule_value)
+  def success_first_try(_rule_value)
     user_successfull_tests.where(id: @test.id).count == 1
   end
 

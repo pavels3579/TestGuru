@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question, only: %i[create update]
+  before_update :finish_test
 
   def completed?
     current_question.nil?
@@ -31,6 +32,10 @@ class TestPassage < ApplicationRecord
     correct_questions * 100/questions_count
   end
 
+  def time_left
+    test.timer.zero? ? nil : self.created_at + test.timer.minutes - Time.current
+  end
+
   private
 
   def before_validation_set_question
@@ -51,6 +56,10 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def finish_test
+    self.current_question = nil if (self.test.timer && time_left < 0)
   end
 
 end

@@ -30,9 +30,12 @@
       </div>
     </div>
 
+    <div>
+      <%= content_tag :div, 'no limit', class: 'my-timer', data: { time_left: @test_passage.time_left } %>
+    </div>
+
     <div class="my-progress">
       <%= content_tag :div, @test_passage.test.title, class: 'my-bar', data: { bar_width: (100*@test_passage.current_question_number/@test_passage.questions_count), current_question_number: @test_passage.current_question_number, questions_count: @test_passage.questions_count } %>
-
     </div>
 
   </div>
