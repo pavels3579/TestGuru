@@ -28,6 +28,7 @@ ru:
       level: "Уровень"
       questions: "Вопросов"
       actions: "Действия"
+      timer: "Минут"
     test:
       start: "Начать"
 
@@ -66,11 +67,13 @@ ru:
         level: "Уровень"
         questions: "Вопросов"
         actions: "Действия"
+        timer: "Минут"
       show:
         new_question: "Новый вопрос"
         title: "Заголовок"
         level: "Уровень"
         questions: "Вопросы"
+        timer: "Минут"
       new:
         header: "Создание нового теста"
       create:

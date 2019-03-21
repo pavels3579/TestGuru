@@ -23,6 +23,7 @@ en:
       level: "Level"
       questions: "Questions"
       actions: "Actions"
+      timer: "Minutes"
     test:
       start: "Start"
 
@@ -61,11 +62,13 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+        timer: "Minutes"
       show:
         new_question: "New question"
         title: "Title"
         level: "Level"
         questions: "Questions"
+        timer: "Minutes"
       new:
         header: "Creating new test"
       create:

@@ -29,13 +29,13 @@ test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
                     category_id: categories[1].id,
                     author_id: user.id,
-                    timer: 2)
+                    timer: 1)
 
 test2 = Test.create!(title: 'HTML',
                     level: 2,
                     category_id: categories[0].id,
                     author_id: user.id,
-                    timer: 0)
+                    timer: nil)
 
 question1 = Question.create!(body: 'How do you create a new hash?',
                              test_id: test1.id)
