@@ -19,6 +19,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :title, uniqueness: { scope: :level }
+  validates :timer, numericality: { allow_nil: true, only_integer: true, greater_than: 0 }
 
   def self.select_by_category_title(category_title)
     Test.select_by_category(category_title).pluck(:title)

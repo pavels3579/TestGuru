@@ -9,13 +9,13 @@
 
 categories = Category.create!(
                                [
-                                 { title: 'HTML' },
-                                 { title: 'Ruby' },
-                                 { title: 'php' }
+                                 { title: 'Frontend' },
+                                 { title: 'Backend' },
+                                 { title: 'net' }
                                ]
                               )
 
-user = User.create!(email: 'Mike@yandex.ru',
+user = User.create!(email: 'm@ya.ru',
                     password: '123456',
                     confirmed_at: Time.now)
 
@@ -28,12 +28,14 @@ admin = Admin.create!(email: 'qwe@ya.ru',
 test1 = Test.create!(title: 'Ruby 1',
                     level: 1,
                     category_id: categories[1].id,
-                    author_id: user.id)
+                    author_id: user.id,
+                    timer: 1)
 
-Test.create!(title: 'Ruby 2',
+test2 = Test.create!(title: 'HTML',
                     level: 2,
-                    category_id: categories[1].id,
-                    author_id: user.id)
+                    category_id: categories[0].id,
+                    author_id: user.id,
+                    timer: nil)
 
 question1 = Question.create!(body: 'How do you create a new hash?',
                              test_id: test1.id)
@@ -41,9 +43,11 @@ question1 = Question.create!(body: 'How do you create a new hash?',
 question2 = Question.create!(body: 'How do you create a new array?',
                  test_id: test1.id)
 
-question3 = Question.create!(body: 'How do you add to array?',
-                 test_id: test1.id)
+#question3 = Question.create!(body: 'How do you add to array?',
+#                 test_id: test1.id)
 
+question21 = Question.create!(body: 'What tag you need to use for link?',
+                             test_id: test2.id)
 
 Answer.create!(body: 'I have to use {}',
                correct: true,
@@ -65,14 +69,31 @@ Answer.create!(body: 'I have to use .new',
                correct: false,
                question_id: question2.id)
 
-Answer.create!(body: 'I have to use push',
+#Answer.create!(body: 'I have to use push',
+#               correct: true,
+#               question_id: question3.id)
+
+#Answer.create!(body: 'I have to use add',
+#               correct: false,
+#               question_id: question3.id)
+
+Answer.create!(body: 'I need to use <a>',
                correct: true,
-               question_id: question3.id)
+               question_id: question21.id)
 
-Answer.create!(body: 'I have to use add',
-               correct: false,
-               question_id: question3.id)
+Badge.create!(title: 'For first successfull try',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579490.png',
+              rule_name: 'success_first_try',
+              rule_value: '')
 
+Badge.create!(title: 'For first level tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579491.png',
+              rule_name: 'level',
+              rule_value: '1')
 
+Badge.create!(title: 'For successfull backend tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579492.png',
+              rule_name: 'category',
+              rule_value: 'Backend')
 
 
